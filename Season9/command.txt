@@ -1,0 +1,24 @@
+su
+useradd -m -c 'Test user' testuser
+passwd testuser
+ls -l /home/
+less /etc/passwd (searching testuser)
+groupadd testgroup (searching testgroup)
+less /etc/group
+usermod -a -G testgroup testuser
+id testuser
+groups testuser
+mkdir sharefolder
+chown testuser:testgroup sharefolder
+ls -la
+userdel -r testuser
+ls -l /home/
+groupdel testgroup
+less /etc/group (searching testgroup)
+chown dani: sharefolder/
+ls -l
+chmod g+w sharefolder
+chmod +t sharefolder
+ls -l
+exit
+
